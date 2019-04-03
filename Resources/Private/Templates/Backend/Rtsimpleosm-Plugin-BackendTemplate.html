@@ -10,11 +10,19 @@
                       <ul class="list-group">
                         <f:for each="{flex.contents.markers}" as="osm">
                           <li class="list-group-item">
-                            <img src="{osm.icon}" alt="osm">&nbsp;
+                            <img src='../typo3conf/ext/rt_simpleosm/Resources/Public/Icons/user_plugin_sosm.svg' alt="osm">&nbsp;
                             <strong>{osm.title}</strong>&nbsp;[{osm.uid}]<br />
-                            <f:format.raw>{osm.address}</f:format.raw>
-                            <f:format.raw>{osm.latitude}</f:format.raw>
-                            <f:format.raw>{osm.longitude}</f:format.raw>
+                            <strong><em>
+                              <f:translate key="LLL:EXT:rt_simpleosm/Resources/Private/Language/locallang_db.xlf:tx_rtsimpleosm_domain_model_osm.address"/>
+                            </em></strong>{osm.address}<br />
+
+                            <strong><em>
+                              <f:translate key="LLL:EXT:rt_simpleosm/Resources/Private/Language/locallang_db.xlf:tx_rtsimpleosm_domain_model_osm.latitude"/>
+                            </em></strong>{osm.latitude}<br />
+
+                            <strong><em>
+                              <f:translate key="LLL:EXT:rt_simpleosm/Resources/Private/Language/locallang_db.xlf:tx_rtsimpleosm_domain_model_osm.longitude"/>
+                            </em></strong>{osm.longitude}<br />
                           </li>
                         </f:for>
                       </ul>

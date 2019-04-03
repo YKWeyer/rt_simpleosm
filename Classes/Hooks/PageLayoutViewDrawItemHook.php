@@ -119,18 +119,7 @@ class PageLayoutViewDrawItemHook implements PageLayoutViewDrawItemHookInterface 
 					->fetchAll();
 			}
 
-			$markers = [];
-			foreach ( $selectedMarkers as $selectedMarker ) {
-				$markers[] = [
-					'icon' => '../typo3conf/ext/rt_simpleosm/Resources/Public/Icons/user_plugin_sosm.svg',
-					'uid' => $selectedMarker['uid'],
-					'title' => $selectedMarker['title'],
-					'latitude' => '<strong><em>' . LocalizationUtility::translate('LLL:EXT:rt_simpleosm/Resources/Private/Language/locallang_db.xlf:tx_rtsimpleosm_domain_model_osm.latitude', 'rt_simpleosm') . '</em></strong>: ' . $selectedMarker['latitude'] . '.<br />',
-					'longitude' => '<strong><em>' . LocalizationUtility::translate('LLL:EXT:rt_simpleosm/Resources/Private/Language/locallang_db.xlf:tx_rtsimpleosm_domain_model_osm.longitude', 'rt_simpleosm') . '</em></strong>: ' . $selectedMarker['longitude'] . '.<br />',
-					'address' => '<strong><em>' . LocalizationUtility::translate('LLL:EXT:rt_simpleosm/Resources/Private/Language/locallang_db.xlf:tx_rtsimpleosm_domain_model_osm.address', 'rt_simpleosm') . '</em></strong>: ' . $selectedMarker['address'] . '.<br />',
-				];
-			}
-			$flex['contents']['markers'] = $markers;
+			$flex['contents']['markers'] = $selectedMarkers;
 		}
 
 		if ( !empty( $flexform['styling']['settings.MapStyle'] || $flexform['styling']['settings.MapStyle'] === '0') ) {
