@@ -55,6 +55,11 @@ class OsmController extends ActionController {
 	 */
 	public function displayMapAction() {
 
+		// Skip rendering of the map if settings are not provided
+		if (empty($this->settings)) {
+			return;
+		}
+
 		//Get Flexform data
 		$mapWidth                = $this->settings['MapWidth'];
 		$mapHeight               = $this->settings['MapHeight'];
